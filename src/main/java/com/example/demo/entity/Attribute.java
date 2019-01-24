@@ -5,13 +5,21 @@ package com.example.demo.entity;
  * 表字段实体类
  */
 public class Attribute {
+    //默认值
+    private String defaultValue;
+    //字段id
     private String attributeId;
+    //字段名称（中文）
     private String attributeName;
+    //字段名称（英文）
     private String physicalName;
+    //字段类型
     private String type;
+    //字段长度
     private String length;
     //主键标识
     private boolean PkFlag=false;
+    //外键标识
     private boolean FKFlag=false;
 
 
@@ -69,5 +77,13 @@ public class Attribute {
 
     public void setPhysicalName(String physicalName) {
         this.physicalName = physicalName;
+    }
+
+    public String getDefaultValue() {
+        return defaultValue;
+    }
+
+    public void setDefaultValue(String defaultValue) {
+        this.defaultValue = defaultValue;
     }
 }

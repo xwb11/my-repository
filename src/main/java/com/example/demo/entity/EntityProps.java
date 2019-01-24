@@ -9,7 +9,10 @@ import java.util.List;
  * 各个ER图表的实体类
  */
 public class EntityProps {
+    //表名（中文）
     private String name;
+    //表名（英文）
+    private String code;
     private String id;
     //主键名称
     private String PkName;
@@ -73,5 +76,13 @@ public class EntityProps {
 
     public void setRelations(Relations[] relations) {
         this.relations = relations;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }
