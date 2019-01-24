@@ -212,6 +212,8 @@ public class ErwinUtil {
                         attributes.setAttributeId(attProps.elementTextTrim("Long_Id"));
                         //字段名称
                         attributes.setAttributeName(attProps.elementTextTrim("Name"));
+                        //字段物理名称(英文字母)
+                        attributes.setPhysicalName(attProps.elementTextTrim("User_Formatted_Physical_Name"));
                         //字段类型
                         attributes.setType(attProps.elementTextTrim("Physical_Data_Type"));
                         String type = attProps.elementTextTrim("Physical_Data_Type");
@@ -310,7 +312,7 @@ public class ErwinUtil {
                                     String refId = PKid.elementTextTrim("Attribute_Ref");
                                     if (refId.equals(pkid)) {//比较成功此时的Kid.elementTextTrim("Name")获取的名称就是主键名
                                         attributes.setPkFlag(true);
-                                        ep.setPkName(PKid.elementTextTrim("Name"));
+                                        ep.setPkName(PKid.elementTextTrim("User_Formatted_Physical_Name"));
                                     }
                                     System.out.println(PKid.elementTextTrim("Name"));
                                     System.out.println(PKid.elementTextTrim("Attribute_Ref"));

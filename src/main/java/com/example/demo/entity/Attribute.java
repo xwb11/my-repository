@@ -7,6 +7,7 @@ package com.example.demo.entity;
 public class Attribute {
     private String attributeId;
     private String attributeName;
+    private String physicalName;
     private String type;
     private String length;
     //主键标识
@@ -60,5 +61,13 @@ public class Attribute {
 
     public void setLength(String length) {
         this.length = length;
+    }
+
+    public String getPhysicalName() {
+        return physicalName;
+    }
+
+    public void setPhysicalName(String physicalName) {
+        this.physicalName = physicalName;
     }
 }
