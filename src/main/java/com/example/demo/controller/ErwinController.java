@@ -20,9 +20,17 @@ public class ErwinController {
 
     @PostMapping("/transformation")
     public Result ErwinParser(@RequestParam String filePath) throws Exception {
-//        //获取Erwin模型的主要信息
-        EntityProps[] erlist = service.ErWin(filePath);
-        return Results.successWithData(erlist, BaseEnums.SUCCESS.code(), BaseEnums.SUCCESS.desc());
+        //获取Erwin模型的主要信息
+        String name = filePath.substring(0,filePath.indexOf("."));
+        if(name.equals("xml")){
+            EntityProps[] erlist = service.ErWin(filePath);
+            return Results.successWithData(erlist, BaseEnums.SUCCESS.code(), BaseEnums.SUCCESS.desc());
+        }else if(name.equals("pdm")){
+            EntityProps[] powerlist = service.parsePom(filePath);
+            return Results.successWithData(powerlist, BaseEnums.SUCCESS.code(), BaseEnums.SUCCESS.desc());
+        }else {
+            return Results.failureWithData(BaseEnums.NOT_FOUND);
+        }
 
     }
 }
