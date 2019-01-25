@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/erwin")
 public class ErwinController {
@@ -21,16 +23,18 @@ public class ErwinController {
     @PostMapping("/transformation")
     public Result ErwinParser(@RequestParam String filePath) throws Exception {
         //获取Erwin模型的主要信息
-        String name = filePath.substring(0,filePath.indexOf("."));
-        if(name.equals("xml")){
-            EntityProps[] erlist = service.ErWin(filePath);
+        String name = filePath.substring(filePath.lastIndexOf(".") + 1);
+        if (name.equals("xml")) {
+            List<EntityProps> erlist = service.ErWin(filePath);
             return Results.successWithData(erlist, BaseEnums.SUCCESS.code(), BaseEnums.SUCCESS.desc());
-        }else if(name.equals("pdm")){
-            EntityProps[] powerlist = service.parsePom(filePath);
+        } else if (name.equals("pdm")) {
+            List<EntityProps> powerlist = service.parsePom(filePath);
             return Results.successWithData(powerlist, BaseEnums.SUCCESS.code(), BaseEnums.SUCCESS.desc());
-        }else {
+        } else {
             return Results.failureWithData(BaseEnums.NOT_FOUND);
         }
 
+
     }
+
 }

@@ -18,9 +18,9 @@ public class Attribute {
     //字段长度
     private String length;
     //主键标识
-    private boolean PkFlag=false;
+    private boolean PkFlag = false;
     //外键标识
-    private boolean FKFlag=false;
+    private boolean FKFlag = false;
 
 
     public String getAttributeId() {

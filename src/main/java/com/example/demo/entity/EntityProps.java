@@ -1,7 +1,6 @@
 package com.example.demo.entity;
 
 
-
 import java.util.List;
 
 /**
@@ -18,9 +17,9 @@ public class EntityProps {
     private String PkName;
     //外键名
 //    private String FKName;
-    private Attribute[] attributes;
-    private Relations[] relations;
-    private List FkNameList;
+    private List<Attribute> attributes;
+    private List<Relations> relations;
+    private List<String> FkNameList;
 
     public String getName() {
         return name;
@@ -38,13 +37,6 @@ public class EntityProps {
         this.id = id;
     }
 
-    public Attribute[] getAttributes() {
-        return attributes;
-    }
-
-    public void setAttributes(Attribute[] attributes) {
-        this.attributes = attributes;
-    }
 
     public String getPkName() {
         return PkName;
@@ -54,29 +46,15 @@ public class EntityProps {
         PkName = pkName;
     }
 
-//    public String getFKName() {
-//        return FKName;
-//    }
-//
-//    public void setFKName(String FKName) {
-//        this.FKName = FKName;
-//    }
 
-    public List getFkNameList() {
+    public List<String> getFkNameList() {
         return FkNameList;
     }
 
-    public void setFkNameList(List fkNameList) {
+    public void setFkNameList(List<String> fkNameList) {
         FkNameList = fkNameList;
     }
 
-    public Relations[] getRelations() {
-        return relations;
-    }
-
-    public void setRelations(Relations[] relations) {
-        this.relations = relations;
-    }
 
     public String getCode() {
         return code;
@@ -84,5 +62,21 @@ public class EntityProps {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public List<Attribute> getAttributes() {
+        return attributes;
+    }
+
+    public void setAttributes(List<Attribute> attributes) {
+        this.attributes = attributes;
+    }
+
+    public List<Relations> getRelations() {
+        return relations;
+    }
+
+    public void setRelations(List<Relations> relations) {
+        this.relations = relations;
     }
 }
