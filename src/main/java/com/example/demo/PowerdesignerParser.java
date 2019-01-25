@@ -1,14 +1,13 @@
 package com.example.demo;
 
-import com.example.demo.entity.Attribute;
-import com.example.demo.entity.EntityProps;
-import com.example.demo.entity.Relations;
+import com.example.demo.entity.*;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -20,20 +19,22 @@ import java.util.List;
  * @Date 2019/1/25 9:14
  * @Version 1.0
  **/
-public class powerdesignerImpl implements transformation{
+public class PowerdesignerParser implements IUmlParser{
 
     @Override
-    public List<EntityProps> transfor(String filePath) throws Exception {
+    public List<Tables> readER(FileInputStream fis) throws Exception {
 
         List<EntityProps> voS = new ArrayList<EntityProps>();
         EntityProps vo = null;
-        File f = new File(filePath);
+//        File f = new File(filePath);
         SAXReader sr = new SAXReader();
         Document doc = null;
 
         List<Relations> references = new ArrayList<>();
+        List<Tables> tablesList  = new ArrayList<>();
+        Tables tables = new Tables();
         try {
-            doc = sr.read(f);
+            doc = sr.read(fis);
         } catch (DocumentException e) {
             e.printStackTrace();
         }
@@ -92,9 +93,11 @@ public class powerdesignerImpl implements transformation{
             }
             vo.setAttributes(list);
             voS.add(vo);
+            tables.setTables(voS);
+            tablesList.add(tables);
             System.out.println(vo);
             System.out.println("======================");
         }
-        return voS;
+        return tablesList;
     }
 }
