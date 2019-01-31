@@ -1,8 +1,9 @@
-package com.example.demo.entity;
+package com.jiuqi.bi.bizview.util.erparse.entity;
 
 
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName Relation
@@ -13,17 +14,17 @@ import java.util.List;
  **/
 public class Relation {
 
-    private List<String> fieldmap;
+    private Map<String,String> fieldmap;
     private boolean pivot;
     private Integer relationmode;
     private String srctable;
     private String targettable;
 
-    public List<String> getFieldmap() {
+    public Map<String, String> getFieldmap() {
         return fieldmap;
     }
 
-    public void setFieldmap(List<String> fieldmap) {
+    public void setFieldmap(Map<String, String> fieldmap) {
         this.fieldmap = fieldmap;
     }
 

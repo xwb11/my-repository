@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.jiuqi.bi.bizview.util.erparse.entity;
 
 import java.util.List;
 
@@ -12,6 +12,7 @@ import java.util.List;
 public class Root {
     List<Table> tables;
 
+
     public List<Table> getTables() {
         return tables;
     }
@@ -19,4 +20,5 @@ public class Root {
     public void setTables(List<Table> tables) {
         this.tables = tables;
     }
+
 }

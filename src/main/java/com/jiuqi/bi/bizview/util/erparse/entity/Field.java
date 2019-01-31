@@ -1,4 +1,6 @@
-package com.example.demo.entity;
+package com.jiuqi.bi.bizview.util.erparse.entity;
+
+
 
 /**
  * @ClassName Field
@@ -32,6 +34,15 @@ public class Field {
     private String timegranularity;
     private String title;
     private boolean visible;
+    //字段id
+    private String ID;
+//    //字段长度
+//    private String length;
+//    //主键标识
+//    private boolean PkFlag = false;
+//    //外键标识
+//    private boolean FKFlag = false;
+
 
     public Integer getAggregationtype() {
         return aggregationtype;
@@ -152,4 +163,36 @@ public class Field {
     public void setVisible(boolean visible) {
         this.visible = visible;
     }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+    //    public String getLength() {
+//        return length;
+//    }
+//
+//    public void setLength(String length) {
+//        this.length = length;
+//    }
+
+//    public boolean isPkFlag() {
+//        return PkFlag;
+//    }
+//
+//    public void setPkFlag(boolean pkFlag) {
+//        PkFlag = pkFlag;
+//    }
+//
+//    public boolean isFKFlag() {
+//        return FKFlag;
+//    }
+//
+//    public void setFKFlag(boolean FKFlag) {
+//        this.FKFlag = FKFlag;
+//    }
+
 }

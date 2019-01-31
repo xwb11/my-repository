@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.jiuqi.bi.bizview.util.erparse.entity;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class Table {
     private List folders;
     private String guid;
     private List<String> hierarchies;
-    private List<String> keys;
+    private List<Key> keys;
     private String name;
     private String physicalSchemaName;
     private String physicalTableName;
@@ -25,6 +25,9 @@ public class Table {
     private String title;
     private Integer type;
     private boolean visible;
+    private List<String> FkNameList;
+//    //主键名称
+//    private String PkName;
 
     public List<Field> getFields() {
         return fields;
@@ -66,11 +69,11 @@ public class Table {
         this.hierarchies = hierarchies;
     }
 
-    public List<String> getKeys() {
+    public List<Key> getKeys() {
         return keys;
     }
 
-    public void setKeys(List<String> keys) {
+    public void setKeys(List<Key> keys) {
         this.keys = keys;
     }
 
@@ -137,4 +140,22 @@ public class Table {
     public void setVisible(boolean visible) {
         this.visible = visible;
     }
+
+//    public List<String> getFkNameList() {
+//        return FkNameList;
+//    }
+//
+//    public void setFkNameList(List<String> fkNameList) {
+//        FkNameList = fkNameList;
+//    }
+
+//    public String getPkName() {
+//        return PkName;
+//    }
+//
+//    public void setPkName(String pkName) {
+//        PkName = pkName;
+//    }
+
+
 }

@@ -1,10 +1,11 @@
 package com.example.demo.controller;
 
-import com.example.demo.ERFactory;
-import com.example.demo.IUmlParser;
 import com.example.demo.base.Result;
-import com.example.demo.entity.Tables;
+
 import com.example.demo.util.Results;
+import com.jiuqi.bi.bizview.util.erparse.ERFactory;
+import com.jiuqi.bi.bizview.util.erparse.IUmlParser;
+import com.jiuqi.bi.bizview.util.erparse.entity.Root;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,7 +26,13 @@ public class ErwinController {
         FileInputStream fis = new FileInputStream(new File(filePath));
 //        String name = filePath.substring(filePath.lastIndexOf(".") + 1);
         IUmlParser s = ERFactory.create(filePath);
-        List<Tables> tablesList = s.readER(fis);
-        return Results.successWithData(tablesList);
+        Root root =  s.readER(fis);
+        return Results.successWithData(root);
+//        String filePath = "C:\\Users\\jiuqi\\Documents\\My Models\\ProductModels.xml";
+////        String filePath = "C:\\Users\\jiuqi\\Documents\\My Models\\学生班级.xml";
+////        String filePath = "E:\\Powerdesigner\\file\\物理模型2.pdm";
+//        FileInputStream fis = new FileInputStream(new File(filePath));
+//        IUmlParser s = ERFactory.create(filePath);
+//        s.readER(fis);
     }
 }
